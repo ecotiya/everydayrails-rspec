@@ -14,6 +14,12 @@ RSpec.describe Note, type: :model do
     )
   end
 
+  it "ファクトリで関連するデータを生成する" do
+    note = FactoryBot.create(:note)
+    puts "This note's project is #{note.project.inspect}"
+    puts "This note's user is #{note.user.inspect}"
+  end
+
   it "ユーザー、プロジェクト、メッセージがあれば有効な状態であること" do
     note = Note.new(
       message: "This is a sample note.",
