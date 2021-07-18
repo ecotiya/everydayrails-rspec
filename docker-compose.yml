@@ -32,8 +32,9 @@ services:
     volumes:
       - .:/myapp
     environment:
-      TZ: Asia/Tokyo
-      RAILS_ENV: development
+      - SPROCKETS_CACHE=/cache
+      - TZ=Asia/Tokyo
+      - RAILS_ENV=development
     ports:
       - "3000:3000"
     depends_on:
